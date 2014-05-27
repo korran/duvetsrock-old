@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+  <title>{{ .Title }}</title>
+  <meta name=viewport content="width=device-width, initial-scale=1">
+</head>
+<style>
+body {
+  background-color: #f0f0f0;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+.gig .time {
+  color: #a0a0a0;
+}
+table.gigs {
+  width: 100%;
+}
+table.gigs td {
+  padding: 4px;
+  vertical-align: top;
+
+}
+table.gigs td.date {
+  white-space: nowrap;
+}
+tr.details {
+  display:none;
+}
+div.section {
+  font-family: sans-serif;
+  background-color: #ffffff;
+  border: 1px solid #d0d0d0;
+  box-shadow: 1px 3px 2px 0px rgba(0, 0, 0, 0.08);
+  margin: 8px;
+}
+.hr {
+  margin-left: 12px;
+  margin-right: 12px;
+  border-top: 1px solid #e0e0e0;
+}
+
+#carousel {
+  width: 100%
+}
+#carousel img {
+  width: 100%;
+  //height: auto;
+}
+
+@media screen and (min-width: 700px) {
+  #gigs {
+    width: 350px;
+  }
+}
+
+</style>
+<body>
+{{ $locations := .Site.Params.locations }}
+<div id="carousel">
+  <div class="inner">
+    <div class="outer">
+      <img src="/carousel3-1440x570.jpg" alt="The Duvets on stage" width="1440" height="570">
+    </div>
+  </div>
+</div>
+<div class="section" id="gigs">
+  <table class="gigs">
+  {{range $i, $gig := .Site.Params.gigs}}
+    {{$location := index $locations $gig.location}}
+    <tr>
+      {{if $i}}
+      <td colspan="99"><div class="hr"></div></td>
+      {{end}}
+    </tr>
+    <tr class="gig">
+      <td class="date">{{$gig.date}}</td>
+      <td class="time">{{$gig.time}}</td>
+      <td class="location">{{$location.title}}</td>
+    </tr>
+    <tr class="details">
+      <td colspan="99">Additional details"</td>
+    </tr>
+  {{ end }}
+  </table>
+</div>
+</body>
+</html>

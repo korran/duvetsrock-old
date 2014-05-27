@@ -1,0 +1,42 @@
+---
+baseurl: http://www.duvetsrock.com/
+title: The Duvets - San Francisco Bay Area Cover Band
+canonifyurls: false
+indexes:
+  data_type: data_types
+params:
+  gigs:
+    - date: Fri, Jun 27
+      time: 10pm
+      location: maggies
+    - date: Fri, Jul 11
+      time: 10pm
+      location: britannia_arms
+    - date: Sat, Jul 26
+      location: private
+    - date: Sat, Aug 2
+      time: 10pm
+      location: dans_bar
+  locations:
+    private:
+      title: "Private Event"
+    maggies:
+      title: "Maggie McGarry's"
+      address: 1353 Grant Avenue
+      city: San Francisco
+      state: CA
+      zip: 94133
+    britannia_arms:
+      title: "Britannia Arms Almaden"
+      address: 5026 Almaden Expressway
+      city: San Jose
+      state: CA
+      zip: 95118
+    dans_bar:
+      title: "Dan's Bar"
+      address: 1524 Civic Drive
+      city: Walnut Creek
+      state: CA
+      zip: 94596
+---
+
